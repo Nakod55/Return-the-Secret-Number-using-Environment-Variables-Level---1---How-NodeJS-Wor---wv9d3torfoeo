@@ -12,7 +12,7 @@ const {readFile}=require("fs");
 app.get('/api/get-env', (req, res) => {
    //Write your code here
    readFile("./.env",(err,data)=>{
-          const num=data.toString()[7];
+          const num=data.toString().substring(7);
           res.send({number: num});
    })
 });
